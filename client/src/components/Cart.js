@@ -10,7 +10,7 @@ function Cart() {
 
   function handleBuy()
   {
-    axios.get(`http://localhost:5000/cart/delete/${user}`)
+    axios.get(`http://52.66.62.104:5000/cart/delete/${user}`)
     setItems([])
   }
 
@@ -38,7 +38,7 @@ function Cart() {
       })
       .then((response) => {
         if (response.data) {
-          axios.get(`http://localhost:5000/cart/getItem/${response.data}`).then(response=>{
+          axios.get(`http://52.66.62.104:5000/cart/getItem/${response.data}`).then(response=>{
             if(response.data===null || response.data===[])
             setItems([])
             else

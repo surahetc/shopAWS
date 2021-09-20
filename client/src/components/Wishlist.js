@@ -10,7 +10,7 @@ function Wishlist() {
 
   function handleBuy()
   {
-    axios.get(`http://localhost:5000/wishlist/delete/${user}`)
+    axios.get(`http://52.66.62.104:5000/wishlist/delete/${user}`)
     setItems([])
   }
 
@@ -30,7 +30,7 @@ function Wishlist() {
 
 
     axios
-      .get("http://localhost:5000/getUser", {
+      .get("http://52.66.62.104:5000/getUser", {
         headers: {
           "Content-Type": "application/json",
         },
@@ -38,7 +38,7 @@ function Wishlist() {
       })
       .then((response) => {
         if (response.data) {
-          axios.get(`http://localhost:5000/wishlist/getItem/${response.data}`).then(response=>{
+          axios.get(`http://52.66.62.104:5000/wishlist/getItem/${response.data}`).then(response=>{
             if(response.data===null || response.data===[])
             setItems([])
             else

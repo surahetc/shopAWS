@@ -7,7 +7,7 @@ function Item(props) {
     const [user, setUser] = React.useState("");
     React.useEffect(() => {
         axios
-          .get("http://localhost:5000/getUser", {
+          .get("http://52.66.62.104:5000/getUser", {
             headers: {
               "Content-Type": "application/json",
             },
@@ -28,13 +28,13 @@ function Item(props) {
     function handleAddToWishlist(e)
     {
         e.preventDefault();
-        axios.get(`http://localhost:5000/wishlist/addTowishlist/${user}/${props.title}`)
+        axios.get(`http://52.66.62.104:5000/wishlist/addTowishlist/${user}/${props.title}`)
     }
 
     function handleAddToCart(e)
     {
         e.preventDefault();
-        axios.get(`http://localhost:5000/cart/addToCart/${user}/${props.title}`)
+        axios.get(`http://52.66.62.104:5000/cart/addToCart/${user}/${props.title}`)
 
 
     }
